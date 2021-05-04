@@ -9,6 +9,7 @@ namespace db__1._2.Entitites
         public int EmployeeOfProjectId { get; set; }
         public decimal Rate { get; set; }
         public DateTime DayOfStart { get; set; }
+        public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
         public int ProjectId { get; set; }
         public Project Project { get; set; }
