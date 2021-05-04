@@ -1,12 +1,22 @@
-﻿using System;
+﻿using System.IO;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace db__1._2
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var builder = new ConfigurationBuilder();
+            builder.SetBasePath(Directory.GetCurrentDirectory());
+            builder.AddJsonFile("settings.json");
+            var config = builder.Build();
+            var connectionString = config.GetConnectionString("DefaultConnection");
+
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationsContext>();
+            var options = optionsBuilder.UseSqlServer(connectionString).Options;
         }
     }
 }
