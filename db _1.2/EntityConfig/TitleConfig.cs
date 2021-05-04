@@ -4,7 +4,7 @@ using db__1._2.Entitites;
 
 namespace db__1._2.EntityConfig
 {
-    public class TitleConfiguration : IEntityTypeConfiguration<Title>
+    public class TitleConfig : IEntityTypeConfiguration<Title>
     {
         public void Configure(EntityTypeBuilder<Title> builder)
         {

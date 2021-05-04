@@ -4,7 +4,7 @@ using db__1._2.Entitites;
 
 namespace db__1._2.EntityConfig
 {
-    public class OfficeConfiguration : IEntityTypeConfiguration<Office>
+    public class OfficeConfig : IEntityTypeConfiguration<Office>
     {
         public void Configure(EntityTypeBuilder<Office> builder)
         {

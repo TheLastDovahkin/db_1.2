@@ -20,11 +20,11 @@ namespace db__1._2
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
-            modelBuilder.ApplyConfiguration(new EmployeeProjectConfiguration());
-            modelBuilder.ApplyConfiguration(new OfficeConfiguration());
-            modelBuilder.ApplyConfiguration(new ProjectConfiguration());
-            modelBuilder.ApplyConfiguration(new TitleConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeConfig());
+            modelBuilder.ApplyConfiguration(new EmployeeProjectConfig());
+            modelBuilder.ApplyConfiguration(new OfficeConfig());
+            modelBuilder.ApplyConfiguration(new ProjectConfig());
+            modelBuilder.ApplyConfiguration(new TitleConfig());
             modelBuilder.ApplyConfiguration(new ClientConfig());
         }
     }

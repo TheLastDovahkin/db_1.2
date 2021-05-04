@@ -4,7 +4,7 @@ using db__1._2.Entitites;
 
 namespace db__1._2.EntityConfig
 {
-    public class EmployeeProjectConfiguration : IEntityTypeConfiguration<EmployeeOfProject>
+    public class EmployeeProjectConfig : IEntityTypeConfiguration<EmployeeOfProject>
     {
         public void Configure(EntityTypeBuilder<EmployeeOfProject> builder)
         {
