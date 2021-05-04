@@ -12,6 +12,6 @@ namespace db__1._2.Entitites
         public DateTime InitialDate { get; set; }
         public int ClientId { get; set; }
         public Client Client { get; set; }
-        public List<>
+        public List<EmployeeOfProject> employeeOfProjects { get; set; } = new List<EmployeeOfProject>();
     }
 }
