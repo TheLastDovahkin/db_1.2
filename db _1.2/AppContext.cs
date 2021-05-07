@@ -1,0 +1,39 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using db__1._2.Entitites;
+using db__1._2.EntityConfig;
+using Microsoft.Extensions.Logging;
+
+namespace db__1._2
+{
+    public class AppContext : DbContext
+    {
+        public AppContext(DbContextOptions<AppContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeProject> EmployeeProjects { get; set; }
+        public DbSet<Office> Offices { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Title> Titles { get; set; }
+        public DbSet<Client> Clients { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableSensitiveDataLogging().LogTo(Console.WriteLine, LogLevel.Information);
+            optionsBuilder.UseLazyLoadingProxies();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new EmployeeConfig());
+            modelBuilder.ApplyConfiguration(new EmployeeProjectConfig());
+            modelBuilder.ApplyConfiguration(new OfficeConfig());
+            modelBuilder.ApplyConfiguration(new ProjectConfig());
+            modelBuilder.ApplyConfiguration(new TitleConfig());
+            modelBuilder.ApplyConfiguration(new ClientConfig());
+        }
+    }
+}
