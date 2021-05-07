@@ -10,6 +10,6 @@ namespace db__1._2.Entitites
         public string Title { get; set; }
         public string Location { get; set; }
 
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual List<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using db__1._2.Entitites;
 using db__1._2.EntityConfig;
+using Microsoft.Extensions.Logging;
 
 namespace db__1._2
 {
@@ -17,6 +19,12 @@ namespace db__1._2
         public DbSet<Project> Projects { get; set; }
         public DbSet<Title> Titles { get; set; }
         public DbSet<Client> Clients { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableSensitiveDataLogging().LogTo(Console.WriteLine, LogLevel.Information);
+            optionsBuilder.UseLazyLoadingProxies();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

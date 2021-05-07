@@ -11,6 +11,6 @@ namespace db__1._2.Entitites
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Company { get; set; }
-        public List<Project> Projects { get; set; } = new List<Project>();
+        public virtual List<Project> Projects { get; set; } = new List<Project>();
     }
 }

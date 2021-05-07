@@ -9,6 +9,6 @@ namespace db__1._2.Entitites
         public int TitleId { get; set; }
         public string NameOfTitle { get; set; }
 
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual List<Employee> Employees { get; set; } = new List<Employee>();
     }
 }
