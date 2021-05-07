@@ -15,7 +15,7 @@ namespace db__1._2
             var config = builder.Build();
             var connectionString = config.GetConnectionString("DefaultConnection");
 
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationsContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<AppContext>();
             var options = optionsBuilder.UseSqlServer(connectionString).Options;
         }
     }

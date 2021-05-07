@@ -6,11 +6,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace db__1._2
 {
-    public class SampleContextFactory : IDesignTimeDbContextFactory<ApplicationsContext>
+    public class SampleContextFactory : IDesignTimeDbContextFactory<AppContext>
     {
-        public ApplicationsContext CreateDbContext(string[] args)
+        public AppContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationsContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<AppContext>();
 
             var builder = new ConfigurationBuilder();
             builder.SetBasePath(Directory.GetCurrentDirectory());
@@ -18,7 +18,7 @@ namespace db__1._2
             var config = builder.Build();
             var connectionString = config.GetConnectionString("DefaultConnection");
             optionsBuilder.UseSqlServer(connectionString, opts => opts.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds));
-            return new ApplicationsContext(optionsBuilder.Options);
+            return new AppContext(optionsBuilder.Options);
         }
     }
 }

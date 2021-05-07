@@ -18,6 +18,6 @@ namespace db__1._2.Entitites
         public int OfficeId { get; set; }
         public Office Office { get; set; }
 
-        public List<EmployeeOfProject> EmployeeProjects { get; set; } = new List<EmployeeOfProject>();
+        public List<EmployeeProject> EmployeeProjects { get; set; } = new List<EmployeeProject>();
     }
 }

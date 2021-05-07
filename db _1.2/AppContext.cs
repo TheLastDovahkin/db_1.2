@@ -4,15 +4,15 @@ using db__1._2.EntityConfig;
 
 namespace db__1._2
 {
-    public class ApplicationsContext : DbContext
+    public class AppContext : DbContext
     {
-        public ApplicationsContext(DbContextOptions<ApplicationsContext> options)
+        public AppContext(DbContextOptions<AppContext> options)
             : base(options)
         {
         }
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<EmployeeOfProject> EmployeeProjects { get; set; }
+        public DbSet<EmployeeProject> EmployeeProjects { get; set; }
         public DbSet<Office> Offices { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Title> Titles { get; set; }
